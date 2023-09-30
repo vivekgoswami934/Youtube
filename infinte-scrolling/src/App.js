@@ -18,7 +18,7 @@ function App() {
     );
     if (
       window.innerHeight + window.scrollY >=
-      window.document.body.offsetHeight - 50
+      window.document.body.offsetHeight - 100
     ) {
       console.log("fetching items...");
       setCount((p) => p + 10);
@@ -34,13 +34,14 @@ function App() {
   useEffect(() => {
     // Create an array of items based on the count
     const newItems = Array.from({ length: count }, (_, index) => index + 1);
+    console.log(newItems)
     setItems(newItems);
   }, [count]);
 
   return (
     <AppWrapper>
       <Navbar>
-        <h1>Infinte Scrolling in React...</h1>
+        <h1>Infinte Scrolling in React... {count}</h1>
       </Navbar>
       <Body>
         {items.map((item) => (
