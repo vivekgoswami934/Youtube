@@ -8,7 +8,7 @@ const TestUseCopyHook = () => {
 
   return (
     <div>
-      <textarea value={value} onChange={(e) => setValue(e.target.value)} />
+      <textarea placeholder="write something then copy" value={value} onChange={(e) => setValue(e.target.value)} />
       <button onClick={() => copyFn(value)}>Copy</button>
     </div>
   );
